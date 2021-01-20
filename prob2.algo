@@ -1,0 +1,32 @@
+VAR
+   set1 : ARRAY_OF_INTEGER[7];
+   set2 : ARRAY_OF_INTEGER[7];
+   
+
+   i,j : INTEGER;
+   sum:INTEGER:=0;
+
+   BEGIN
+   Write("Enter Set1 :");
+   Read(set1);
+   Write("Enter Set2 :");
+   Read(set2);
+   FOR i FROM 0 TO length(set1) DO
+   j:=0;
+    WHILE (set1[i]=set2[j] and j<length(set2))
+    j=j+1;
+    END_WHILE
+    IF (j = length(set2)) THEN
+    sum=sum+set1[i];
+    END_IF
+
+    FOR j FROM 0 TO length(set2) DO
+   i:=0;
+    WHILE (set1[i]=set2[j] and i<length(set1))
+    i=i+1;
+    END_WHILE
+    IF (i = length(set1)) THEN
+    sum=sum+set2[j];
+    END_IF
+
+END
